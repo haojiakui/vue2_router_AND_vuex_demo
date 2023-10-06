@@ -1,10 +1,20 @@
 <template>
   <div id="app">
+    <div class="desb">
+      <div>
+        <div>1.组件级跳转时，缓存当前页数据</div>
+        <div>2.组件跳转时，将所属的vuestore内的数据清空</div>
+      </div>
+    </div>
+
     <nav>
-      <router-link to="/">Home</router-link> |
+      <router-link to="/">Home</router-link>
+      |
       <router-link to="/about">About</router-link>
     </nav>
-    <router-view />
+    <KeepAlive>
+      <router-view />
+    </KeepAlive>
   </div>
 </template>
 
@@ -28,5 +38,8 @@ nav {
       color: #42b983;
     }
   }
+}
+.desb{
+  width: 100%;
 }
 </style>
